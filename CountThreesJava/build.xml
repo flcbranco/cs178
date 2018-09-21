@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+// Name: Fabio Castello Branco
+// Course: CS178 Build Automation for DevOps and QA
+// CRN: 76718
+// Date: 9/1/2018
+// Assignment: Essential Software Skills 3 - Ant - Write a build.xml file to compile Java Code
+-->
+<project name="CountThrees" default="runCount3s" basedir=".">
+  <description>Essential Software Skills 3 - Ant - Write a build.xml file to compile Java Code</description>
+  <property name="src" value="."/>
+  <property name="build" value="."/>
+
+  <target name="Count3s">
+    <!-- Build the Count3s class from source -->
+    <javac srcdir="${src}" destdir="${build}" includeAntRuntime="false"/>
+  </target>
+
+  <target name="runCount3s" depends="Count3s">
+    <!-- Run the count3s application -->
+    <java classname="CountThrees">
+      <classpath>
+        <pathelement location="${build}"/>
+        <pathelement path="${java.class.path}"/>
+      </classpath>
+    </java>
+  </target>
+
+  <target name="clean" description="Removes the previous build">
+    <delete verbose="true">
+      <fileset dir="${build}">
+        <include name="**/*.class"/>
+        <exclude name="**/*.java"/>
+        <exclude name="**/*.bin"/>
+        <exclude name="**/*.xml"/>
+        <exclude name="**/*.sh"/>
+      </fileset>
+    </delete>
+  </target>
+
+</project>
