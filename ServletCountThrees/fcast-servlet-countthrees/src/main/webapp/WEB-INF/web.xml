@@ -4,10 +4,12 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <!-- Declares and names the servlet -->
   <servlet>
     <servlet-name>ServletCountThrees</servlet-name>
     <servlet-class>com.hpcbayarea.cs178.ServletCountThrees</servlet-class>
   </servlet>
+  <!-- Maps the URL /ServletCountThrees to the servlet -->
   <servlet-mapping>
     <servlet-name>ServletCountThrees</servlet-name>
     <url-pattern>/ServletCountThrees</url-pattern>

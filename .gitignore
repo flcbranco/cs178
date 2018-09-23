@@ -1,0 +1,6 @@
+CountThreesC/*.o
+CountThreesC/Count3s
+CountThreesJava/*.class
+ServerCountThrees/build
+ServerCountThrees/src/ServerCountThrees
+ServletCountThrees/target
